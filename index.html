@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text-center">
+        <b><span id="info" style="color: red;">Next Post For You</span></b><br />
+        <span id="countdown"></span>
+        <b>
+            <p id="keyid" style="display: none;"></p>
+        </b>
+    </div>
+
+    <script type="application/javascript">
+
+        document.getElementById("info").innerHTML = 'Wait For Privet Key...'; // change message
+
+        (function () {
+            // genarate Random privet Key
+            const myArray = ['@@Riaz##', '@@Sraban##', '@@Apu##', '@@Dipu##'];
+            var rendtxt = myArray[~~(Math.random() * myArray.length)];
+
+            var count = 5;
+            var countdown_element = document.getElementById("countdown");
+            var priveteKey = document.getElementById("keyid");
+            var timer = setInterval(function () {
+
+                if (count) {
+                    // display text
+                    countdown_element.innerHTML = "Please wait %d seconds.".replace("%d", count);
+                    // decrease counter
+                    count--;
+                } else {
+                    // stop timer
+                    clearInterval(timer);
+
+                    // hide countdown
+                    countdown_element.style.display = "none";
+
+                    //change message status
+                    document.getElementById("info").innerHTML = 'Your Privet Key is';
+
+                    // Privet Key
+                    priveteKey.innerText = rendtxt;
+
+                    // show download link
+                    priveteKey.style.display = '';
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+
+</html>
