@@ -20,12 +20,16 @@
     </div>
 
     <script type="application/javascript">
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+            alert('ei beta right clik koros kere?')
+        }, false);
 
         document.getElementById("info").innerHTML = 'Wait For Privet Key...'; // change message
 
         (function () {
             // genarate Random privet Key
-            const myArray = ['@@Riaz##', '@@Sraban##', '@@Apu##', '@@Dipu##'];
+            var myArray = ['@@Riaz##', '@@Sraban##', '@@Apu##', '@@Dipu##'];
             var rendtxt = myArray[~~(Math.random() * myArray.length)];
 
             var count = 5;
